@@ -12,12 +12,12 @@ parser = argparse.ArgumentParser(
     description="Checks stock result from EPOS automatically, finding anomalies and calculating ordering percent"
 )
 
-parser.add_argument("file")
-parser.add_argument('-s', "--sales", type=float)
-parser.add_argument('-g', "--graph", action="store_true")
-parser.add_argument('-a', "--analyze", action="store_true")
-parser.add_argument('-d', "--drop100", action="store_true")
-parser.add_argument('-o', "--output")
+parser.add_argument("file", help=".xls file from stocklink")
+parser.add_argument('-s', "--sales", type=float, help="input sales to calculate Usage per 1000")
+parser.add_argument('-g', "--graph", action="store_true", help="shows a graph of cogs percent")
+parser.add_argument('-a', "--analyze", action="store_true", help="print analysis of outliers")
+parser.add_argument('-d', "--drop100", action="store_true", help="don't show rows where var is 100 in analysis")
+parser.add_argument('-o', "--output", help="save to .csv file")
 args = parser.parse_args()
 
 
